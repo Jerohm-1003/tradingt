@@ -50,7 +50,6 @@ login_manager.init_app(app)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# Database connection
 def get_db_connection():
     return mysql.connector.connect(
         host='localhost',
@@ -58,6 +57,7 @@ def get_db_connection():
         password='',  # No password
         database='marketplace'
     )
+
 
 # Create the items table
 def create_items_table():
